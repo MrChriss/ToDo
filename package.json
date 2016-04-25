@@ -1,0 +1,30 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "simple to do app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrChriss/ToDo.git"
+  },
+  "keywords": [
+    "todo",
+    "tasks"
+  ],
+  "author": "MrChriss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrChriss/ToDo/issues"
+  },
+  "homepage": "https://github.com/MrChriss/ToDo#readme",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-flatten": "0.0.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "todo app",
+  "homepage": "https://github.com/MrChriss/ToDo",
+  "authors": [
+    "MrChriss <kristof.crnivec@gmail.com>"
+  ],
+  "description": "This is a simple to-do app",
+  "main": "",
+  "keywords": [
+    "todo",
+    "tasks"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}

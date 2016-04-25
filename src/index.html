@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='ToDo'>
+    <head>
+          <meta charset="utf-8">
+
+          <title>ToDo</title>
+
+          <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+          <script src="../bower_components/angular/angular.js"></script>
+
+          <script src="js/all.js"></script>
+
+          <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+    </head>
+    <body ng-controller='mainController'>
+        
+        <div class="container">
+            <div class="row">
+              <h1>This is a simple ToDo task app</h1>
+
+              <div class="col-xs-12 well">
+                <h3>Your ToDo tasks will show up here:</h3>
+                <!-- track by $index to avoid error: repeat dupes -->
+
+                <div class="well" ng-repeat="tskAdd in toDoTasks track by $index">
+                  <p ng-show="!show">{{ tskAdd }}</p>
+                  <button class='btn btn-primary' ng-click='addTaskDone(tskAdd, toDoTasksDone); remove(tskAdd, toDoTasks)' ng-show="!show"> Task done</button>
+                  <button class="btn btn-primary" ng-click="remove(tskAdd, toDoTasks)" ng-show="!show">Delete task</button>
+                  <br>
+                  <input type="checkbox" ng-model='show'><b> Hide</b></input>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 well">
+                <h3>Your done tasks will show up here:</h3>
+                <div class="well" ng-repeat="tskAddDone in toDoTasksDone track by $index">
+                  <p ng-show="!show">{{ tskAddDone }}</p>
+                  <button class='btn btn-primary' ng-click='addTaskDone(tskAddDone, toDoTasks); remove(tskAddDone, toDoTasksDone)' ng-show="!show"> Task redo</button>
+                  <button class="btn btn-primary" ng-click="remove(tskAddDone, toDoTasksDone)" ng-show="!show">Delete task</button>
+                  <br>
+                  <input type="checkbox" ng-model='show'><b> Hide</b></input>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 well">
+                <textarea name="inp" class="form-control" placeholder="Input the task" ng-model="newTask"></textarea>
+                <button class="btn btn-primary" ng-click="addTask(newTask)">Submit</button>
+              </div>
+            </div>
+          </div>
+    </body>
+
+</html>
